@@ -9,7 +9,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (cardDetail) => ['md-linedivider'].includes('cardDetail'),
+          isCustomElement: (card) => ['lite-youtube'].includes(card),
         }
       }
     }),

@@ -49,8 +49,8 @@ defineProps({
 
 
 .badge {
-    background-color: plum;
-    color: wheat;
+    background-color: #A2B59F;
+    color: white;
     width: 35px;
     border: solid 1px white;
     border-radius: 10px;

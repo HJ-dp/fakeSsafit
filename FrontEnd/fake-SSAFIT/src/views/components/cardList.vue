@@ -52,7 +52,7 @@ card {
     display: flex;
     flex-direction: column;
     width: 300px;
-    border: solid 1px black;
+    border: double 3px gray;
     padding: 10px;
     border-radius: 5px;
     flex-shrink: 0;
