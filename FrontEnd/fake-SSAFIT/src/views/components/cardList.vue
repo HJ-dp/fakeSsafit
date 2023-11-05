@@ -1,25 +1,16 @@
 <template>
-    <div>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <div class="">
         <h1>최근 가장 많이 본 영상</h1>
         <div class="container">
             <div v-if="isOk" class="List">
-                <card v-for="i of content" :dynamic-props='i' :video-url="i.url" :key="i.name" />
+                <cardDetail v-for="i of content" :dynamic-props='i' :video-url="i.url" :key="i.id" />
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import card from './cardDetail.vue'
+import cardDetail from './cardDetail.vue'
 import { ref } from 'vue';
 const content = ref('')
 const isOk = ref(false)
@@ -46,6 +37,7 @@ h1{
 .container {
     box-shadow: 5px 5px 20px;
     padding: 20px 50px;
+    margin: 2em;
 }
 
 .List {

@@ -22,7 +22,7 @@
 <script setup>
 
 defineProps({
-    dynamicProps: String,
+    dynamicProps: Object,
     videoUrl: String
 })
 
