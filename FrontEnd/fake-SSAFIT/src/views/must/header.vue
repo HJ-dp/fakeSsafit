@@ -1,27 +1,18 @@
 <template>
     <header>
         <div class="flex">
-            <a href="#" class="logo">SSAFIT</a>
+            <router-link to="/" class="logo">SSAFIT</router-link>
+            <!-- <a href="#" class="logo">SSAFIT</a> -->
             <button class="toggle" @click="a"><span class="material-symbols-outlined">
 density_medium
 </span></button>
         </div>
         <nav :class="{'active':act}">
-            <a href="#">홈</a>
+            <router-link to="/">홈</router-link>
             <a href="#">헬스장찾기</a>
-            <a href="#">마이페이지</a>
-            <a href="#">로그아웃</a>
-            <!-- 아이콘 버전-->
-            <!-- <div><a href="#"><span class="material-symbols-outlined">
-                        home
-                    </span></a></div>
-            <a href="#">헬스장찾기</a>
-            <a href="#"><span class="material-symbols-outlined">
-                    account_circle
-                </span></a>
-            <a href="#"><span class="material-symbols-outlined">
-                    logout
-                </span></a> -->
+            <!-- <a href="#">마이페이지</a> -->
+            <router-link to="/login">로그인</router-link>
+            <router-link to="/signup">회원가입</router-link>
         </nav>
     </header>
 </template>
@@ -54,11 +45,17 @@ button{
 }
 
 a {
+    display: block;
     color: inherit;
     text-decoration: none;
-    width: 100%;
     white-space:nowrap;
     padding: 5px;
+    transition: 0.2s;
+}
+
+a:hover {
+    font-size: 1.5em;
+    box-shadow: 0 5px 0 0 gold;
 }
 
 .logo {
@@ -82,6 +79,11 @@ nav {
     align-items: center;
     gap: 1em;
     text-align: center;
+    
+}
+
+nav * {
+    width: 100%;
 }
 
 .toggle {
@@ -106,6 +108,7 @@ nav {
         flex-direction: column;
         width: 100%;
         display: none;
+        gap:0px;
         padding-bottom: 1em;
     }
 
