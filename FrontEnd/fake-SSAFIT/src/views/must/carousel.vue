@@ -5,7 +5,7 @@
                 <img src="/neom-Iy59i0M7oP4-unsplash.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="/neom-Iy59i0M7oP4-unsplash.jpg" class="d-block w-100" alt="...">
+                <img src="/pexels-pixabay-258045.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img src="/neom-Iy59i0M7oP4-unsplash.jpg" class="d-block w-100" alt="...">
