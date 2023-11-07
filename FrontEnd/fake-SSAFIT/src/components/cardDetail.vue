@@ -1,15 +1,15 @@
 <template>
-    <card>
-        <div style="width=300px; height: 200px; background-color: gray;">
-        </div>
+    <card @click="detailView(dynamicProps.videoId)">
+        <!-- <div style="width=400px; height: 180px; background-color: gray;"> -->
+        <img :src="getImageUrl(dynamicProps.videoId)" />
+        <!-- </div> -->
         <div class="flex">
             <div class="title">{{ dynamicProps.title }}</div>
             <div class="flex right">
                 <span class="material-symbols-outlined">
                     visibility
                 </span>
-                <div> 1 </div>
-
+                <div> {{ dynamicProps.videoViewCnt }} </div>
             </div>
         </div>
         <div class="flex">
@@ -20,12 +20,24 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const detailView = (path) => {
+  router.push('/detail/'+ path)         // router.push("/") : 경로만 전달 가능
+  // router.push({ name:path }) : name 기반일 경우
+}
 
 defineProps({
     dynamicProps: Object,
     videoUrl: String
 })
 
+const fname = ref("Vue");
+
+function getImageUrl(name) {
+    return `https://img.youtube.com/vi/${name}/mqdefault.jpg`;
+}
 
 </script>
 
@@ -44,7 +56,7 @@ defineProps({
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap:1em;
+    gap: 1em;
 }
 
 
