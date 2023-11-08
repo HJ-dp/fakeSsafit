@@ -54,7 +54,8 @@ a {
 }
 
 a:hover {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
+    transform: scale(1.3);
     box-shadow: 0 5px 0 0 gold;
 }
 
@@ -97,6 +98,10 @@ nav * {
         height: auto;
     }
 
+    a:hover {
+    box-shadow: 0 5px 0 0 goldenrod;
+}
+
     .flex {
         display: flex;
         width: 100%;
@@ -113,7 +118,7 @@ nav * {
     }
 
     nav a:hover {
-        background-color: aqua;
+        background-color: gold;
         border-radius: 5px;
     }
 

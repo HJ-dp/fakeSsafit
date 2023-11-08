@@ -10,19 +10,19 @@
       </code> -->
         <br>
         <div class="part">
-            <a class="flex" href="#">
+            <a class="flex" @click="Click('전신')">
                 <div class="partImg"></div>
                 <div>전신</div>
             </a>
-            <a class="flex" href="#">
+            <a class="flex" @click="Click('상체')">
                 <div class="partImg"></div>
                 <div>상체</div>
             </a>
-            <a class="flex" href="#">
+            <a class="flex" @click="Click('하체')">
                 <div class="partImg"></div>
                 <div>하체</div>
             </a>
-            <a class="flex" href="#">
+            <a class="flex" @click="Click('복부')">
                 <div class="partImg"></div>
                 <div>복부</div>
             </a>
@@ -41,7 +41,8 @@ import { ref } from 'vue';
 
 const content = ref('')
 const isOk = ref(false)
-fetch('https://my-json-server.typicode.com/HJ-dp/Boxiting/post')
+function partVideo(p){
+    fetch(`https://port-0-java-springboot-gj8u2llomt4u6f.sel5.cloudtype.app/api-video/part?part=${p}`)
     .then((response) => { return response.json() })
     .then((response) => {
         content.value = response;
@@ -50,7 +51,15 @@ fetch('https://my-json-server.typicode.com/HJ-dp/Boxiting/post')
     .catch((e) => {
         console.log(e);
     })
+}
+partVideo('전신');
 
+const Click = async (p) => {
+    isOk.value = false;
+    await partVideo(p);
+}
+
+// partVideo('전신');
 </script>
 
 <style scoped>
@@ -101,7 +110,8 @@ h1 {
 a {
     text-decoration: none;
     color: black;
-    width: 10%
+    width: 10%;
+    cursor: pointer;
 }
 
 
@@ -114,6 +124,7 @@ a {
 
 .flex:hover {
     box-shadow: 0 1em 0 0 gold;
+    transform: scale(1.3);
 }
 
 .part {
@@ -122,7 +133,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 4em; */
+    gap: 4em;
 }
 
 .partImg {
@@ -132,11 +143,38 @@ a {
     background-color: aqua;
 }
 
+.part :first-child :first-child{
+    background-image: url('/gd1.jpeg');
+    background-position: 50% 10%;
+    background-size: 4em;
+}
+
+.part :nth-child(2) :first-child{
+    background-image: url('/gd1.jpeg');
+    background-position: 50% 10%;
+    background-size: 6em;
+}
+
+.part :nth-child(3) :first-child{
+    background-image: url('/gd1.jpeg');
+    background-position: 50% 60%;
+    background-size: 6em;
+}
+
+.part :nth-child(4) :first-child{
+    background-image: url('/2.jpeg');
+    background-size: 7em;
+    background-position: 50%;
+}
+
+
+
 .container {
     border-radius: 1em;
     box-shadow: 5px 5px 20px;
     padding: 20px 50px;
     margin: 1em 0 1em 0;
+    width: 90vw;
 }
 
 .List {
@@ -150,11 +188,18 @@ a {
 card {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 346px;
     border: double 3px gray;
     padding: 10px;
     border-radius: 5px;
     flex-shrink: 0;
     flex-grow: 0;
+    transition: 0.2s;
+}
+
+card:hover {
+    box-shadow: 2px 2px 2px gold;
+    cursor: pointer;
+    transform: scale(1.1);
 }
 </style>

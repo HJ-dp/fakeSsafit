@@ -25,7 +25,12 @@ const router = createRouter({
       path: '/detail/:id',
       name: 'detail',
       component: VideoDetail
-    }
+    },
+    // {
+    //   path: '/detail/:id/:uid',
+    //   name: 'detail',
+    //   component: VideoDetail
+    // }
   ]
 })
 

@@ -41,6 +41,7 @@ h1 {
     box-shadow: 5px 5px 20px;
     padding: 20px 50px;
     margin: 2em;
+    width: 90vw;
 }
 
 .List {
@@ -60,10 +61,12 @@ card {
     border-radius: 5px;
     flex-shrink: 0;
     flex-grow: 0;
+    transition: 0.2s;
 }
 
 card:hover {
     box-shadow: 2px 2px 2px gold;
     cursor: pointer;
+    transform: scale(1.1);
 }
 </style>
