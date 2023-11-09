@@ -12,7 +12,7 @@
         <div class="part">
             <a class="flex" @click="Click('전신')">
                 <div class="partImg"></div>
-                <div>전신</div>
+                <div>전신</div>d
             </a>
             <a class="flex" @click="Click('상체')">
                 <div class="partImg"></div>
@@ -144,27 +144,27 @@ a {
 }
 
 .part :first-child :first-child{
-    background-image: url('/gd1.jpeg');
-    background-position: 50% 10%;
-    background-size: 4em;
+    background-image: url('/d.jpg');
+    background-position: 11% 0%;
+    background-size: 15em;
 }
 
 .part :nth-child(2) :first-child{
-    background-image: url('/gd1.jpeg');
-    background-position: 50% 10%;
-    background-size: 6em;
+    background-image: url('/d.jpg');
+    background-position: 17% 60%;
+    background-size: 11em;
 }
 
 .part :nth-child(3) :first-child{
-    background-image: url('/gd1.jpeg');
-    background-position: 50% 60%;
-    background-size: 6em;
+    background-image: url('/d.jpg');
+    background-position: 95% 80%;
+    background-size: 10em;
 }
 
 .part :nth-child(4) :first-child{
-    background-image: url('/2.jpeg');
-    background-size: 7em;
-    background-position: 50%;
+    background-image: url('/d.jpg');
+    background-size: 14em;
+    background-position: 90% 0%;
 }
 
 

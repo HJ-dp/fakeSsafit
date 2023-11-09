@@ -17,7 +17,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { ref } from 'vue';
-import detail from '../components/VideoReviewDetail.vue';
+import detail from '../components/reviews/VideoReviewDetail.vue';
 
 const route = useRoute();
 const header = ["TITLE","Writer","rating","date","view"] ;

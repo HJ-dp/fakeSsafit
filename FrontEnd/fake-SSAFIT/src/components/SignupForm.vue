@@ -33,6 +33,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'
+const router = useRouter();
 
 const modalId = ref('');
 const modalPw = ref('');
@@ -41,9 +43,6 @@ const age = ref('');
 const email = ref('');
 
 const signup = () => {
-    // const data = { age: 3, email: 'bonkri9', password: modalPw.value, userId: modalId.value, userName: '구본민' }
-    // modalPw.value = '';
-    // modalId.value = '';
     const option = {
         method: 'post',
         headers: {
@@ -55,18 +54,24 @@ const signup = () => {
         userId: modalId.value, password: modalPw.value, userName: userName.value, age: age.value, email: email.value,
     };
     let query = Object.keys(params)
-        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
-        .join('&');
+    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+    .join('&');
     let url = 'https://port-0-java-springboot-gj8u2llomt4u6f.sel5.cloudtype.app/api-user/signup?' + query;
-
+    
     fetch(url, option)
-        .then(response => response)
-        .then(response => {
-            console.log(response);
-        })
-        .catch(error => {
-            console.log(error);
-        });
+    .then(response => response)
+    .then(response => {
+        console.log(response);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    modalPw.value = '';
+    modalId.value = '';
+    userName.value = '';
+    age.value = '';
+    email.value = '';
+    router.push('/');
 }
 
 </script>
