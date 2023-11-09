@@ -1,6 +1,6 @@
 <template>
     <div>
-        {{ $route.params.id }}
+
     </div>
 </template>
 
@@ -9,5 +9,5 @@
 </script>
 
 <style scoped>
-
+    
 </style>

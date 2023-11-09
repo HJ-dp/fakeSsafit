@@ -2,7 +2,6 @@
     <header>
         <div class="flex">
             <router-link to="/" class="logo">SSAFIT</router-link>
-            <!-- <a href="#" class="logo">SSAFIT</a> -->
             <button class="toggle" @click="a"><span class="material-symbols-outlined">
 density_medium
 </span></button>
@@ -54,7 +53,8 @@ a {
 }
 
 a:hover {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
+    transform: scale(1.3);
     box-shadow: 0 5px 0 0 gold;
 }
 
@@ -79,7 +79,6 @@ nav {
     align-items: center;
     gap: 1em;
     text-align: center;
-    
 }
 
 nav * {
@@ -95,6 +94,10 @@ nav * {
     header {
         flex-direction: column;
         height: auto;
+    }
+
+    a:hover {
+    box-shadow: 0 5px 0 0 goldenrod;
     }
 
     .flex {
@@ -113,7 +116,7 @@ nav * {
     }
 
     nav a:hover {
-        background-color: aqua;
+        background-color: gold;
         border-radius: 5px;
     }
 
