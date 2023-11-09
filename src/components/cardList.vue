@@ -37,7 +37,7 @@ h1 {
 
 
 .container {
-    border-radius: 1em;
+    border-radius: 5px;
     box-shadow: 5px 5px 20px;
     padding: 20px 50px;
     margin: 2em;

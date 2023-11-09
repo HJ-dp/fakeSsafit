@@ -12,7 +12,7 @@
         <div class="part">
             <a class="flex" @click="Click('전신')">
                 <div class="partImg"></div>
-                <div>전신</div>d
+                <div>전신</div>
             </a>
             <a class="flex" @click="Click('상체')">
                 <div class="partImg"></div>
@@ -59,7 +59,6 @@ const Click = async (p) => {
     await partVideo(p);
 }
 
-// partVideo('전신');
 </script>
 
 <style scoped>
@@ -128,7 +127,7 @@ a {
 }
 
 .part {
-    width: 100%;
+    width: 90vw;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -167,15 +166,14 @@ a {
     background-position: 90% 0%;
 }
 
-
-
 .container {
-    border-radius: 1em;
+    border-radius: 5px;
     box-shadow: 5px 5px 20px;
     padding: 20px 50px;
-    margin: 1em 0 1em 0;
+    margin: 2em auto;
     width: 90vw;
 }
+
 
 .List {
     display: flex;
