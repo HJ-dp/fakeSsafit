@@ -3,7 +3,7 @@ import HomeView from '../views/Mainpage.vue'
 import LoginView from '../components/LoginForm.vue'
 import SignupView from '../components/SignupForm.vue'
 import VideoDetail from '../views/VideoDetail.vue'
-import ReviewDetal from '../components/'
+import ReviewDetal from '../components/reviews/ReviewDetail.vue'
 const router = createRouter({ 
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -30,7 +30,7 @@ const router = createRouter({
         {
           path: ':uid',
           name: 'reviewdetail',
-          component: VideoDetail
+          component: ReviewDetal
         },
 
       ]
