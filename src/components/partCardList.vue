@@ -12,19 +12,19 @@
         <div class="part">
             <a class="flex" @click="Click('전신')">
                 <div class="partImg"></div>
-                <div>전신</div>
+                <p calss="partInfo">전신</p>
             </a>
             <a class="flex" @click="Click('상체')">
                 <div class="partImg"></div>
-                <div>상체</div>
+                <div calss="partInfo">상체</div>
             </a>
             <a class="flex" @click="Click('하체')">
                 <div class="partImg"></div>
-                <div>하체</div>
+                <div calss="partInfo">하체</div>
             </a>
             <a class="flex" @click="Click('복부')">
                 <div class="partImg"></div>
-                <div>복부</div>
+                <div calss="partInfo">복부</div>
             </a>
         </div>
         <div class="container">
@@ -104,6 +104,7 @@ code {
 h1 {
     font-family: 'Roboto Mono', monospace;
     text-align: center;
+    font-size: 24px;
 }
 
 a {
@@ -122,8 +123,8 @@ a {
 }
 
 .flex:hover {
-    box-shadow: 0 1em 0 0 gold;
-    transform: scale(1.3);
+    /* box-shadow: 0 1em 0 0 gold; */
+    transform: scale(1.1);
 }
 
 .part {
@@ -139,7 +140,11 @@ a {
     height: 4em;
     width: 4em;
     border-radius: 100px;
-    background-color: aqua;
+    background-color: rgb(52, 199, 89);
+}
+
+.partInfo {
+    background-color: #202129;
 }
 
 .part :first-child :first-child{
@@ -168,9 +173,9 @@ a {
 
 .container {
     border-radius: 5px;
-    box-shadow: 5px 5px 20px;
+    border : 1px solid #eee;
     padding: 20px 50px;
-    margin: 2em auto;
+    margin: 2em;
     width: 90vw;
 }
 
@@ -187,17 +192,18 @@ card {
     display: flex;
     flex-direction: column;
     width: 346px;
-    border: double 3px gray;
+    border: 0;
     padding: 10px;
     border-radius: 5px;
     flex-shrink: 0;
     flex-grow: 0;
-    transition: 0.2s;
+    transition: all .3s cubic-bezier(0,0,.5,1);
+    box-shadow: 2px 4px 12px rgba(0,0,0,.08);
 }
 
 card:hover {
-    box-shadow: 2px 2px 2px gold;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.16);
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale3d(1.01,1.01,1.01);
 }
 </style>

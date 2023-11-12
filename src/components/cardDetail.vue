@@ -61,7 +61,7 @@ function getImageUrl(name) {
 
 
 .badge {
-    background-color: #A2B59F;
+    background-color: #0071e3;
     color: white;
     width: 35px;
     border: solid 1px white;
