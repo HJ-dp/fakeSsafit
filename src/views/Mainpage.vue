@@ -2,7 +2,7 @@
     <div>
         <carousel />
         <div class="cont p">
-            <cardlist />
+            <cardlist type="most" />
             <br>
             <partcardlist />
         </div>

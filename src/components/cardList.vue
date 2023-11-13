@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>최근 가장 많이 본 영상</h1>
+        <h1 v-if="type=='most'">최근 가장 많이 본 영상</h1>
         <div class="container">
             <div v-if="isOk" class="List">
                 <cardDetail v-for="i of content" :dynamic-props='i' :video-url="i.url" :key="i.id" />
@@ -12,8 +12,11 @@
 <script setup>
 import cardDetail from './cardDetail.vue'
 import { ref } from 'vue';
-const content = ref('')
-const isOk = ref(false)
+const content = ref('');
+const isOk = ref(false);
+
+const props = defineProps(["type"])
+
 fetch('https://port-0-java-springboot-gj8u2llomt4u6f.sel5.cloudtype.app/api-video/count')
     .then((response) => { return response.json() })
     .then((response) => {
@@ -33,15 +36,18 @@ fetch('https://port-0-java-springboot-gj8u2llomt4u6f.sel5.cloudtype.app/api-vide
 h1 {
     font-family: 'Roboto Mono', monospace;
     text-align: center;
+    white-space: nowrap;
+    font-size : 24px;
 }
 
 
 .container {
     border-radius: 5px;
-    box-shadow: 5px 5px 20px;
-    padding: 20px 50px;
-    margin: 2em;
-    width: 90vw;
+    border : 1px solid #eee;
+    padding: 20px 20px;
+    margin: 2em auto;
+    flex-shrink: 0;
+    /* width: 90vw; */
 }
 
 .List {
@@ -56,17 +62,18 @@ card {
     display: flex;
     flex-direction: column;
     width: 346px;
-    border: double 3px gray;
+    border: 0;
     padding: 10px;
     border-radius: 5px;
     flex-shrink: 0;
     flex-grow: 0;
-    transition: 0.2s;
+    transition: all .3s cubic-bezier(0,0,.5,1);
+    box-shadow: 2px 4px 12px rgba(0,0,0,.08);
 }
 
 card:hover {
-    box-shadow: 2px 2px 2px gold;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.16);
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale3d(1.01,1.01,1.01);
 }
 </style>

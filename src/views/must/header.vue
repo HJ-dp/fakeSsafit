@@ -1,25 +1,27 @@
 <template>
     <header>
-        <div class="flex">
-            <router-link to="/" class="logo">SSAFIT</router-link>
-            <button class="toggle" @click="a"><span class="material-symbols-outlined">
-density_medium
-</span></button>
+        <div class="header-wrapper">
+            <div class="flex">
+                <router-link to="/" class="logo">SSAFIT</router-link>
+                <button class="toggle" @click="a"><span class="material-symbols-outlined">
+                        density_medium
+                    </span></button>
+            </div>
+            <nav :class="{ 'active': act }">
+                <router-link to="/">홈</router-link>
+                <a href="#">헬스장찾기</a>
+                <!-- <a href="#">마이페이지</a> -->
+                <router-link to="/login">로그인</router-link>
+                <router-link to="/signup">회원가입</router-link>
+            </nav>
         </div>
-        <nav :class="{'active':act}">
-            <router-link to="/">홈</router-link>
-            <a href="#">헬스장찾기</a>
-            <!-- <a href="#">마이페이지</a> -->
-            <router-link to="/login">로그인</router-link>
-            <router-link to="/signup">회원가입</router-link>
-        </nav>
     </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 const act = ref(false);
-function a(){
+function a() {
     act.value = !act.value;
 }
 
@@ -27,16 +29,16 @@ function a(){
 
 <style scoped>
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
-button{
+button {
     border: 0;
-  background-color: transparent;
+    background-color: transparent;
 }
 
 * {
@@ -47,30 +49,36 @@ a {
     display: block;
     color: inherit;
     text-decoration: none;
-    white-space:nowrap;
-    padding: 5px;
+    white-space: nowrap;
+    /* padding: 5px; */
+    font-size: 12px;
     transition: 0.2s;
 }
 
 a:hover {
-    /* font-size: 1.5em; */
-    transform: scale(1.3);
-    box-shadow: 0 5px 0 0 gold;
+    transform: scale(1.01);
+    /* box-shadow: 0 5px 0 0 gold; */
+    text-decoration-line: underline;
 }
 
 .logo {
-    font-size: 40px;
+    font-size: 28px;
 }
 
 header {
-    height: 70px;
+    height: 44px;
+    width: 100%;
+    align-items: center;
+    padding: 0 2em;
+}
+
+.header-wrapper{
     display: flex;
     width: 100%;
+    max-width: 980px;
     box-sizing: border-box;
     justify-content: space-between;
-    align-items: center;
-    padding:0 2em;
-    box-shadow: 5px 1px 5px;
+    margin: 0 auto;
 }
 
 nav {
@@ -91,13 +99,25 @@ nav * {
 
 
 @media screen and (max-width: 768px) {
+    .logo {
+        /* font-size: 22.667967796325px; */
+        font-size: 29.33555px;
+    }
+
     header {
-        flex-direction: column;
         height: auto;
     }
 
+    .header-wrapper{
+        flex-direction: column;
+    }
+
+    a {
+        font-size: 17px;
+    }
+
     a:hover {
-    box-shadow: 0 5px 0 0 goldenrod;
+        box-shadow: 0 5px 0 0 goldenrod;
     }
 
     .flex {
@@ -111,7 +131,7 @@ nav * {
         flex-direction: column;
         width: 100%;
         display: none;
-        gap:0px;
+        gap: 0px;
         padding-bottom: 1em;
     }
 
@@ -120,11 +140,17 @@ nav * {
         border-radius: 5px;
     }
 
-    .toggle{
+    .toggle {
         display: block;
+        display: flex;
+        align-content: center;
     }
 
-    nav.active{
+    .toggle:hover {
+        transform: scale(1.01);
+    }
+
+    nav.active {
         display: flex;
     }
 }
