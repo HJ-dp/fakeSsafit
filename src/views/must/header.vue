@@ -1,18 +1,20 @@
 <template>
     <header>
-        <div class="flex">
-            <router-link to="/" class="logo">SSAFIT</router-link>
-            <button class="toggle" @click="a"><span class="material-symbols-outlined">
-                    density_medium
-                </span></button>
+        <div class="header-wrapper">
+            <div class="flex">
+                <router-link to="/" class="logo">SSAFIT</router-link>
+                <button class="toggle" @click="a"><span class="material-symbols-outlined">
+                        density_medium
+                    </span></button>
+            </div>
+            <nav :class="{ 'active': act }">
+                <router-link to="/">홈</router-link>
+                <a href="#">헬스장찾기</a>
+                <!-- <a href="#">마이페이지</a> -->
+                <router-link to="/login">로그인</router-link>
+                <router-link to="/signup">회원가입</router-link>
+            </nav>
         </div>
-        <nav :class="{ 'active': act }">
-            <router-link to="/">홈</router-link>
-            <a href="#">헬스장찾기</a>
-            <!-- <a href="#">마이페이지</a> -->
-            <router-link to="/login">로그인</router-link>
-            <router-link to="/signup">회원가입</router-link>
-        </nav>
     </header>
 </template>
 
@@ -65,13 +67,18 @@ a:hover {
 
 header {
     height: 44px;
-    display: flex;
     width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
     align-items: center;
     padding: 0 2em;
-    box-shadow: 5px 1px 5px;
+}
+
+.header-wrapper{
+    display: flex;
+    width: 100%;
+    max-width: 980px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 nav {
@@ -98,8 +105,11 @@ nav * {
     }
 
     header {
-        flex-direction: column;
         height: auto;
+    }
+
+    .header-wrapper{
+        flex-direction: column;
     }
 
     a {
