@@ -2,17 +2,24 @@
     <div>
         <carousel />
         <div class="cont p">
-            <cardlist type="most" />
+            <cardlist type="most" :myStore="store"/>
             <br>
-            <partcardlist />
+            <cardlist type="part" :myStore="store"/>
+            <!-- <partcardlist /> -->
         </div>
     </div>
 </template>
 
 <script setup>
-import carousel from '../views/must/carousel.vue';
-import cardlist from '../components/cardList.vue';
-import partcardlist from '../components/partCardList.vue';
+import carousel from '../components/must/carousel.vue';
+import cardlist from '../components/videos/cardList.vue';
+import { useVideoStore } from '../stores/video';
+import { onMounted } from 'vue';
+const store = useVideoStore();
+onMounted(()=>{
+    store.getVideoList();
+    store.getPartVideo('전신');
+})
 </script>
 
 <style scoped>

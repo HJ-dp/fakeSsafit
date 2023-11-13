@@ -17,7 +17,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { ref } from 'vue';
-import detail from '../components/reviews/VideoReviewDetail.vue';
+import detail from '../components/review/ReviewDetail.vue';
 
 const route = useRoute();
 const header = ["TITLE","Writer","rating","date","view"] ;
@@ -54,7 +54,7 @@ let query = Object.keys(params)
 let url = 'https://port-0-java-springboot-gj8u2llomt4u6f.sel5.cloudtype.app/api-/board/?' + query;
 
 fetch(url, option)
-    .then(response => response.json())
+    .then(response => response)
     .then(response => {
         console.log(response);
         reviewList.value = response;

@@ -14,7 +14,8 @@
 </template>
 
 <script setup>
-import theHeader from './views/must/header.vue';
+import theHeader from '../src/components/must/header.vue';
+
 </script>
 
 <style scoped>

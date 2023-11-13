@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/Mainpage.vue'
-
-import LoginView from '../components/user/LoginForm.vue'
-import SignupView from '../components/user/SignupForm.vue'
+import LoginView from '../views/RegistView.vue'
+import SignupView from '../views/RegistView.vue'
 import VideoDetail from '../views/VideoDetail.vue'
-import ReviewDetal from '../components/reviews/ReviewDetail.vue'
+import ReviewDetal from '../components/review/ReviewDetail.vue'
 const router = createRouter({ 
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -16,12 +15,14 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: LoginView
+      component: LoginView,
+      props: { type : 'login'}
     },
     {
       path: '/signup',
       name: 'signup',
-      component: SignupView
+      component: SignupView,
+      props: { type : 'signup'}
     },
     {
       path: '/detail/:id',

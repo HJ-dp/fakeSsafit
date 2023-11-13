@@ -1,8 +1,7 @@
 <template>
-    <div class="modal">
-        <div class="dialog">
-            <h1>Login</h1>
-            <div class="flex-box">
+    <div class="dialog">
+        <h1>Login</h1>
+        <div class="flex-box">
             <div class="flex">
                 <label for="modalId">ID</label>
                 <input type="text" v-model="modalId">
@@ -12,11 +11,10 @@
                 <input type="password" v-model="modalPw" name="" id="">
             </div>
         </div>
-            <div>
-                <router-link to="/signup" class="clickBtn">Sign up</router-link>
-                &nbsp;
-                <button @click="login" class="clickBtn">✔</button>
-            </div>
+        <div>
+            <router-link to="/signup" class="clickBtn">Sign up</router-link>
+            &nbsp;
+            <button @click="login" class="clickBtn">✔</button>
         </div>
     </div>
 </template>
@@ -55,26 +53,16 @@ const login = () => {
 </script>
 
 <style scoped>
-.flex-box{
+.flex-box {
     display: flex;
     gap: 0.5em;
     flex-direction: column;
     align-items: end;
 }
+
 .flex {
     display: flex;
     gap: 0.5em;
-    justify-content: center;
-    align-items: center;
-}
-.modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
     justify-content: center;
     align-items: center;
 }

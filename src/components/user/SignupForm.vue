@@ -1,34 +1,32 @@
 <template>
-    <a class="modal">
-        <div class="dialog">
-            <h1>SIGN UP</h1>
-            <div class="flex-box">
-                <div class="flex">
-                    <label for="modalId">ID</label>
-                    <input type="text" v-model="modalId" id="modalId">
-                </div>
-                <div class="flex">
-                    <label for="modalPw">PW</label>
-                    <input type="password" v-model="modalPw" id="modalPw">
-                </div>
-                <div class="flex">
-                    <label for="userName">NAME</label>
-                    <input type="text" v-model="userName" id="userName">
-                </div>
-                <div class="flex">
-                    <label for="age">AGE</label>
-                    <input type="text" v-model="age" id="age">
-                </div>
-                <div class="flex">
-                    <label for="email">EMAIL</label>
-                    <input type="text" v-model="email" id="email">
-                </div>
+    <div class="dialog">
+        <h1>SIGN UP</h1>
+        <div class="flex-box">
+            <div class="flex">
+                <label for="modalId">ID</label>
+                <input type="text" v-model="modalId" id="modalId">
             </div>
-            <div>
-                <button @click="signup">👌</button>
+            <div class="flex">
+                <label for="modalPw">PW</label>
+                <input type="password" v-model="modalPw" id="modalPw">
+            </div>
+            <div class="flex">
+                <label for="userName">NAME</label>
+                <input type="text" v-model="userName" id="userName">
+            </div>
+            <div class="flex">
+                <label for="age">AGE</label>
+                <input type="text" v-model="age" id="age">
+            </div>
+            <div class="flex">
+                <label for="email">EMAIL</label>
+                <input type="text" v-model="email" id="email">
             </div>
         </div>
-    </a>
+        <div>
+            <button @click="signup">👌</button>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -54,18 +52,18 @@ const signup = () => {
         userId: modalId.value, password: modalPw.value, userName: userName.value, age: age.value, email: email.value,
     };
     let query = Object.keys(params)
-    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
-    .join('&');
+        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+        .join('&');
     let url = 'https://port-0-java-springboot-gj8u2llomt4u6f.sel5.cloudtype.app/api-user/signup?' + query;
-    
+
     fetch(url, option)
-    .then(response => response)
-    .then(response => {
-        console.log(response);
-    })
-    .catch(error => {
-        console.log(error);
-    });
+        .then(response => response)
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            console.log(error);
+        });
     modalPw.value = '';
     modalId.value = '';
     userName.value = '';
@@ -77,18 +75,8 @@ const signup = () => {
 </script>
 
 <style scoped>
-.modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.flex-box{
+
+.flex-box {
     display: flex;
     gap: 0.5em;
     flex-direction: column;

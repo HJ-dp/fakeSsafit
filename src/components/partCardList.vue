@@ -35,7 +35,7 @@
     </div>
 </template>
 <script setup>
-import cardDetail from './cardDetail.vue'
+import cardDetail from './videos/cardDetail.vue'
 import { ref } from 'vue';
 
 
@@ -177,6 +177,7 @@ a {
     padding: 20px 50px;
     margin: 2em;
     width: 90vw;
+    margin:0 auto;
 }
 
 
